@@ -158,24 +158,25 @@ public class OneListBean {
 
     public static class ContentListBean {
         /**
-         * id : 9070
-         * category : 0
+         * id : 14017
+         * category : 1
          * display_category : 6
-         * item_id : 1581
-         * title : 绘画
-         * forward : 许多人相信，没有注定的人生，所有的事基本上是一连串的巧合。然而，即使抱持如是信念的人也会有这样的结论：在生命中的某一段时期，当他们回头审视，发现多年来被视为巧合的事，其实是不可避免的。
-         * img_url : http://image.wufazhuce.com/FgV1sJRhHYefN8FNRkJJIXpKbI97
-         * like_count : 3166
-         * post_date : 2017-01-08 06:00:00
-         * last_update_date : 2017-01-04 18:22:59
-         * author : {}
+         * item_id : 2939
+         * title : 看，金拱门
+         * forward : “当年出社会和人拼搏输赢，为了什么我已经想不起来了”，这样意义的歌词听一耳朵也会觉得鼻头很酸。路过学校门口的时候，抬头又见到“金拱门”，稍微有些触动。
+         * img_url : http://image.wufazhuce.com/FoogMF7zLOFFIat99_1EzW9astmP
+         * like_count : 426
+         * post_date : 2017-11-30 06:00:00
+         * last_update_date : 2017-11-28 12:16:50
+         * author : {"user_id":"4814749","user_name":"张怡微","desc":"张怡微，作家。作品《云物如故乡》、《情关西游》等。","wb_name":"@张怡微 ","is_settled":"0","settled_type":"0","summary":"张怡微，作家。","fans_total":"3472","web_url":"http://image.wufazhuce.com/FpFQFQenJh2RsWjdlGb7t6sr-qVs"}
          * video_url :
          * audio_url :
          * audio_platform : 2
          * start_video :
-         * volume : VOL.1555
-         * pic_info : 大木耳Hammer Chen
-         * words_info : 奥尔罕·帕慕克
+         * has_reading : 0
+         * volume : 0
+         * pic_info :
+         * words_info :
          * subtitle :
          * number : 0
          * serial_id : 0
@@ -189,14 +190,13 @@ public class OneListBean {
          * ad_closetime :
          * ad_share_cnt :
          * ad_pvurl_vendor :
-         * content_id : 1581
-         * content_type : 0
+         * content_id : 2939
+         * content_type : 1
          * content_bgcolor : #FFFFFF
-         * share_url : http://m.wufazhuce.com/one/1581
-         * share_info : {"url":"http://m.wufazhuce.com/one/1581","image":"http://image.wufazhuce.com/FgV1sJRhHYefN8FNRkJJIXpKbI97","title":"VOL.1555","content":"许多人相信，没有注定的人生，所有的事基本上是一连串的巧合。然而，即使抱持如是信念的人也会有这样的结论：在生命中的某一段时期，当他们回头审视，发现多年来被视为巧合的事，其实是不可避免的。"}
-         * orientation : 0
-         * music_name : 来来回回
-         * audio_author : 陈楚生
+         * share_url : http://m.wufazhuce.com/article/2939
+         * share_info : {"url":"http://m.wufazhuce.com/article/2939","image":"http://image.wufazhuce.com/FoogMF7zLOFFIat99_1EzW9astmP","title":"看，金拱门 作者/张怡微","content":"今天抄袭昨天，明天又抄袭今天。"}
+         * share_list : {"wx":{"title":"张怡微专栏 | 看，金拱门","desc":"文/张怡微 今天抄袭昨天，明天又抄袭今天。","link":"http://m.wufazhuce.com/article/2939?channel=singlemessage","imgUrl":"http://image.wufazhuce.com/ONE_logo_120_square.png","audio":""},"wx_timeline":{"title":"张怡微专栏 | 看，金拱门","desc":"文/张怡微 今天抄袭昨天，明天又抄袭今天。","link":"http://m.wufazhuce.com/article/2939?channel=timeline","imgUrl":"http://image.wufazhuce.com/ONE_logo_120_square.png","audio":""},"weibo":{"title":"ONE一个《张怡微专栏 | 看，金拱门》 文/张怡微： 今天抄袭昨天，明天又抄袭今天。 阅读全文：http://m.wufazhuce.com/article/2939?channel=weibo 下载ONE一个APP:http://weibo.com/p/100404157874","desc":"","link":"http://m.wufazhuce.com/article/2939?channel=weibo","imgUrl":"","audio":""},"qq":{"title":"看，金拱门","desc":"今天抄袭昨天，明天又抄袭今天。","link":"http://m.wufazhuce.com/article/2939?channel=qq","imgUrl":"http://image.wufazhuce.com/ONE_logo_120_square.png","audio":""}}
+         * tag_list : [{"id":"28","title":"张怡微专栏"}]
          */
 
         private String id;
@@ -214,6 +214,7 @@ public class OneListBean {
         private String audio_url;
         private int audio_platform;
         private String start_video;
+        private int has_reading;
         private String volume;
         private String pic_info;
         private String words_info;
@@ -234,10 +235,9 @@ public class OneListBean {
         private String content_bgcolor;
         private String share_url;
         private ShareInfoBean share_info;
-        private String orientation;
-        private String music_name;
-        private String audio_author;
+        private ShareListBean share_list;
         private List<?> serial_list;
+        private List<TagListBean> tag_list;
 
         @Override
         public String toString() {
@@ -257,7 +257,8 @@ public class OneListBean {
                     ", audio_url='" + audio_url + '\'' +
                     ", audio_platform=" + audio_platform +
                     ", start_video='" + start_video + '\'' +
-                    ", volume='" + volume + '\'' +
+                    ", has_reading=" + has_reading +
+                    ", volume=" + volume +
                     ", pic_info='" + pic_info + '\'' +
                     ", words_info='" + words_info + '\'' +
                     ", subtitle='" + subtitle + '\'' +
@@ -277,10 +278,9 @@ public class OneListBean {
                     ", content_bgcolor='" + content_bgcolor + '\'' +
                     ", share_url='" + share_url + '\'' +
                     ", share_info=" + share_info +
-                    ", orientation='" + orientation + '\'' +
-                    ", music_name='" + music_name + '\'' +
-                    ", audio_author='" + audio_author + '\'' +
+                    ", share_list=" + share_list +
                     ", serial_list=" + serial_list +
+                    ", tag_list=" + tag_list +
                     '}';
         }
 
@@ -402,6 +402,14 @@ public class OneListBean {
 
         public void setStart_video(String start_video) {
             this.start_video = start_video;
+        }
+
+        public int getHas_reading() {
+            return has_reading;
+        }
+
+        public void setHas_reading(int has_reading) {
+            this.has_reading = has_reading;
         }
 
         public String getVolume() {
@@ -564,28 +572,12 @@ public class OneListBean {
             this.share_info = share_info;
         }
 
-        public String getOrientation() {
-            return orientation;
+        public ShareListBean getShare_list() {
+            return share_list;
         }
 
-        public void setOrientation(String orientation) {
-            this.orientation = orientation;
-        }
-
-        public String getMusic_name() {
-            return music_name;
-        }
-
-        public void setMusic_name(String music_name) {
-            this.music_name = music_name;
-        }
-
-        public String getAudio_author() {
-            return audio_author;
-        }
-
-        public void setAudio_author(String audio_author) {
-            this.audio_author = audio_author;
+        public void setShare_list(ShareListBean share_list) {
+            this.share_list = share_list;
         }
 
         public List<?> getSerial_list() {
@@ -596,15 +588,116 @@ public class OneListBean {
             this.serial_list = serial_list;
         }
 
+        public List<TagListBean> getTag_list() {
+            return tag_list;
+        }
+
+        public void setTag_list(List<TagListBean> tag_list) {
+            this.tag_list = tag_list;
+        }
+
         public static class AuthorBean {
+            /**
+             * user_id : 4814749
+             * user_name : 张怡微
+             * desc : 张怡微，作家。作品《云物如故乡》、《情关西游》等。
+             * wb_name : @张怡微
+             * is_settled : 0
+             * settled_type : 0
+             * summary : 张怡微，作家。
+             * fans_total : 3472
+             * web_url : http://image.wufazhuce.com/FpFQFQenJh2RsWjdlGb7t6sr-qVs
+             */
+
+            private String user_id;
+            private String user_name;
+            private String desc;
+            private String wb_name;
+            private String is_settled;
+            private String settled_type;
+            private String summary;
+            private String fans_total;
+            private String web_url;
+
+            public String getUser_id() {
+                return user_id;
+            }
+
+            public void setUser_id(String user_id) {
+                this.user_id = user_id;
+            }
+
+            public String getUser_name() {
+                return user_name;
+            }
+
+            public void setUser_name(String user_name) {
+                this.user_name = user_name;
+            }
+
+            public String getDesc() {
+                return desc;
+            }
+
+            public void setDesc(String desc) {
+                this.desc = desc;
+            }
+
+            public String getWb_name() {
+                return wb_name;
+            }
+
+            public void setWb_name(String wb_name) {
+                this.wb_name = wb_name;
+            }
+
+            public String getIs_settled() {
+                return is_settled;
+            }
+
+            public void setIs_settled(String is_settled) {
+                this.is_settled = is_settled;
+            }
+
+            public String getSettled_type() {
+                return settled_type;
+            }
+
+            public void setSettled_type(String settled_type) {
+                this.settled_type = settled_type;
+            }
+
+            public String getSummary() {
+                return summary;
+            }
+
+            public void setSummary(String summary) {
+                this.summary = summary;
+            }
+
+            public String getFans_total() {
+                return fans_total;
+            }
+
+            public void setFans_total(String fans_total) {
+                this.fans_total = fans_total;
+            }
+
+            public String getWeb_url() {
+                return web_url;
+            }
+
+            public void setWeb_url(String web_url) {
+                this.web_url = web_url;
+            }
         }
 
         public static class ShareInfoBean {
             /**
-             * url : http://m.wufazhuce.com/one/1581
-             * image : http://image.wufazhuce.com/FgV1sJRhHYefN8FNRkJJIXpKbI97
-             * title : VOL.1555
-             * content : 许多人相信，没有注定的人生，所有的事基本上是一连串的巧合。然而，即使抱持如是信念的人也会有这样的结论：在生命中的某一段时期，当他们回头审视，发现多年来被视为巧合的事，其实是不可避免的。
+             * url : http://m.wufazhuce.com/article/2939
+             * image : http://image.wufazhuce.com/FoogMF7zLOFFIat99_1EzW9astmP
+             * title : 看，金拱门 作者/张怡微
+             * content : 今天抄袭昨天，明天又抄袭今天。
              */
 
             private String url;
@@ -644,5 +737,302 @@ public class OneListBean {
                 this.content = content;
             }
         }
+
+        public static class ShareListBean {
+            /**
+             * wx : {"title":"张怡微专栏 | 看，金拱门","desc":"文/张怡微 今天抄袭昨天，明天又抄袭今天。","link":"http://m.wufazhuce.com/article/2939?channel=singlemessage","imgUrl":"http://image.wufazhuce.com/ONE_logo_120_square.png","audio":""}
+             * wx_timeline : {"title":"张怡微专栏 | 看，金拱门","desc":"文/张怡微 今天抄袭昨天，明天又抄袭今天。","link":"http://m.wufazhuce.com/article/2939?channel=timeline","imgUrl":"http://image.wufazhuce.com/ONE_logo_120_square.png","audio":""}
+             * weibo : {"title":"ONE一个《张怡微专栏 | 看，金拱门》 文/张怡微： 今天抄袭昨天，明天又抄袭今天。 阅读全文：http://m.wufazhuce.com/article/2939?channel=weibo 下载ONE一个APP:http://weibo.com/p/100404157874","desc":"","link":"http://m.wufazhuce.com/article/2939?channel=weibo","imgUrl":"","audio":""}
+             * qq : {"title":"看，金拱门","desc":"今天抄袭昨天，明天又抄袭今天。","link":"http://m.wufazhuce.com/article/2939?channel=qq","imgUrl":"http://image.wufazhuce.com/ONE_logo_120_square.png","audio":""}
+             */
+
+            private WxBean wx;
+            private WxTimelineBean wx_timeline;
+            private WeiboBean weibo;
+            private QqBean qq;
+
+            public WxBean getWx() {
+                return wx;
+            }
+
+            public void setWx(WxBean wx) {
+                this.wx = wx;
+            }
+
+            public WxTimelineBean getWx_timeline() {
+                return wx_timeline;
+            }
+
+            public void setWx_timeline(WxTimelineBean wx_timeline) {
+                this.wx_timeline = wx_timeline;
+            }
+
+            public WeiboBean getWeibo() {
+                return weibo;
+            }
+
+            public void setWeibo(WeiboBean weibo) {
+                this.weibo = weibo;
+            }
+
+            public QqBean getQq() {
+                return qq;
+            }
+
+            public void setQq(QqBean qq) {
+                this.qq = qq;
+            }
+
+            public static class WxBean {
+                /**
+                 * title : 张怡微专栏 | 看，金拱门
+                 * desc : 文/张怡微 今天抄袭昨天，明天又抄袭今天。
+                 * link : http://m.wufazhuce.com/article/2939?channel=singlemessage
+                 * imgUrl : http://image.wufazhuce.com/ONE_logo_120_square.png
+                 * audio :
+                 */
+
+                private String title;
+                private String desc;
+                private String link;
+                private String imgUrl;
+                private String audio;
+
+                public String getTitle() {
+                    return title;
+                }
+
+                public void setTitle(String title) {
+                    this.title = title;
+                }
+
+                public String getDesc() {
+                    return desc;
+                }
+
+                public void setDesc(String desc) {
+                    this.desc = desc;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public String getImgUrl() {
+                    return imgUrl;
+                }
+
+                public void setImgUrl(String imgUrl) {
+                    this.imgUrl = imgUrl;
+                }
+
+                public String getAudio() {
+                    return audio;
+                }
+
+                public void setAudio(String audio) {
+                    this.audio = audio;
+                }
+            }
+
+            public static class WxTimelineBean {
+                /**
+                 * title : 张怡微专栏 | 看，金拱门
+                 * desc : 文/张怡微 今天抄袭昨天，明天又抄袭今天。
+                 * link : http://m.wufazhuce.com/article/2939?channel=timeline
+                 * imgUrl : http://image.wufazhuce.com/ONE_logo_120_square.png
+                 * audio :
+                 */
+
+                private String title;
+                private String desc;
+                private String link;
+                private String imgUrl;
+                private String audio;
+
+                public String getTitle() {
+                    return title;
+                }
+
+                public void setTitle(String title) {
+                    this.title = title;
+                }
+
+                public String getDesc() {
+                    return desc;
+                }
+
+                public void setDesc(String desc) {
+                    this.desc = desc;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public String getImgUrl() {
+                    return imgUrl;
+                }
+
+                public void setImgUrl(String imgUrl) {
+                    this.imgUrl = imgUrl;
+                }
+
+                public String getAudio() {
+                    return audio;
+                }
+
+                public void setAudio(String audio) {
+                    this.audio = audio;
+                }
+            }
+
+            public static class WeiboBean {
+                /**
+                 * title : ONE一个《张怡微专栏 | 看，金拱门》 文/张怡微： 今天抄袭昨天，明天又抄袭今天。 阅读全文：http://m.wufazhuce.com/article/2939?channel=weibo 下载ONE一个APP:http://weibo.com/p/100404157874
+                 * desc :
+                 * link : http://m.wufazhuce.com/article/2939?channel=weibo
+                 * imgUrl :
+                 * audio :
+                 */
+
+                private String title;
+                private String desc;
+                private String link;
+                private String imgUrl;
+                private String audio;
+
+                public String getTitle() {
+                    return title;
+                }
+
+                public void setTitle(String title) {
+                    this.title = title;
+                }
+
+                public String getDesc() {
+                    return desc;
+                }
+
+                public void setDesc(String desc) {
+                    this.desc = desc;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public String getImgUrl() {
+                    return imgUrl;
+                }
+
+                public void setImgUrl(String imgUrl) {
+                    this.imgUrl = imgUrl;
+                }
+
+                public String getAudio() {
+                    return audio;
+                }
+
+                public void setAudio(String audio) {
+                    this.audio = audio;
+                }
+            }
+
+            public static class QqBean {
+                /**
+                 * title : 看，金拱门
+                 * desc : 今天抄袭昨天，明天又抄袭今天。
+                 * link : http://m.wufazhuce.com/article/2939?channel=qq
+                 * imgUrl : http://image.wufazhuce.com/ONE_logo_120_square.png
+                 * audio :
+                 */
+
+                private String title;
+                private String desc;
+                private String link;
+                private String imgUrl;
+                private String audio;
+
+                public String getTitle() {
+                    return title;
+                }
+
+                public void setTitle(String title) {
+                    this.title = title;
+                }
+
+                public String getDesc() {
+                    return desc;
+                }
+
+                public void setDesc(String desc) {
+                    this.desc = desc;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public String getImgUrl() {
+                    return imgUrl;
+                }
+
+                public void setImgUrl(String imgUrl) {
+                    this.imgUrl = imgUrl;
+                }
+
+                public String getAudio() {
+                    return audio;
+                }
+
+                public void setAudio(String audio) {
+                    this.audio = audio;
+                }
+            }
+        }
+
+        public static class TagListBean {
+            /**
+             * id : 28
+             * title : 张怡微专栏
+             */
+
+            private String id;
+            private String title;
+
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public String getTitle() {
+                return title;
+            }
+
+            public void setTitle(String title) {
+                this.title = title;
+            }
+        }
     }
+
 }

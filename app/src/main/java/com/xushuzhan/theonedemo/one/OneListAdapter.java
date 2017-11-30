@@ -14,6 +14,7 @@ import com.xushuzhan.theonedemo.data.bean.OneListItemViewModule;
 import com.xushuzhan.theonedemo.databinding.ItemOneNormalBinding;
 import com.xushuzhan.theonedemo.databinding.ItemOneTopBinding;
 import com.xushuzhan.theonedemo.common.CommonViewHolder;
+
 import java.util.List;
 
 /**
@@ -23,17 +24,18 @@ import java.util.List;
 public class OneListAdapter extends RecyclerView.Adapter<CommonViewHolder> {
 
     List<OneListBean.ContentListBean> mContents;
+
     public OneListAdapter(List<OneListBean.ContentListBean> contentListBean) {
         mContents = contentListBean;
     }
 
     @Override
     public CommonViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == R.layout.item_one_top){
-            ItemOneTopBinding itemOneTopBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),viewType,parent,false);
+        if (viewType == R.layout.item_one_top) {
+            ItemOneTopBinding itemOneTopBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), viewType, parent, false);
             return new CommonViewHolder<ItemOneTopBinding>(itemOneTopBinding);
-        }else {
-            ItemOneNormalBinding itemOneNormalBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),viewType,parent,false);
+        } else {
+            ItemOneNormalBinding itemOneNormalBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), viewType, parent, false);
             return new CommonViewHolder<ItemOneNormalBinding>(itemOneNormalBinding);
         }
 
@@ -43,30 +45,22 @@ public class OneListAdapter extends RecyclerView.Adapter<CommonViewHolder> {
     public void onBindViewHolder(CommonViewHolder holder, int position) {
         OneListBean.ContentListBean contentListBean = mContents.get(position);
         OneListItemViewModule oneListItemViewModule = new OneListItemViewModule(contentListBean);
-        holder.binding.setVariable(BR.itemViewModule,oneListItemViewModule);
+        holder.binding.setVariable(BR.itemViewModel, oneListItemViewModule);
 //        oneListItemViewModule.update(contentListBean);
     }
 
 
-
     @Override
     public int getItemCount() {
-        return 1;
+        return mContents.size();
     }
 
-//    class OneListHolder extends RecyclerView.ViewHolder{
-//        ViewDataBinding viewDataBinding;
-//        public OneListHolder(ViewDataBinding itemBinding){
-//            super(itemBinding.getRoot());
-//            viewDataBinding = itemBinding;
-//        }
-//    }
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 0){
+        if (position == 0) {
             return R.layout.item_one_top;
-        }else {
+        } else {
             return R.layout.item_one_normal;
         }
     }

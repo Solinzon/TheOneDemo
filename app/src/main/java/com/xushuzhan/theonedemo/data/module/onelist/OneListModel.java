@@ -23,18 +23,22 @@ public class OneListModel {
     private static final String TAG = "OneListModel";
     OneListBaseData mOneListBaseData;
 
-    public OneListModel(OneListBaseData oneListBaseData){
-        mOneListBaseData = oneListBaseData;
+    public OneListModel(OneListBaseData oneListBaseData) {
+            mOneListBaseData = oneListBaseData;
     }
 
-    public void getData(int idPosition,DataCallBack dataCallBack){
+    public void getData(int idPosition, DataCallBack dataCallBack) {
         mOneListBaseData.getIdListBeanObservable()
                 .flatMap(listJsonWrapper -> mOneListBaseData.getItemBeanObservable(listJsonWrapper.getData().get(idPosition)))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(oneListBeanJsonWrapper -> {
                     dataCallBack.onLoadData(oneListBeanJsonWrapper.getData());
-                },throwable -> Log.e(TAG, "getData: "+throwable.getMessage()));
+                }, throwable ->
+                {
+                    Log.e(TAG, "getData: " + throwable.getMessage());
+                    throwable.printStackTrace();
+                });
     }
 
 }

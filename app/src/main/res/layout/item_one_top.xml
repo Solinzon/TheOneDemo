@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
     <data>
         <variable
-            name="itemViewModule"
+            name="itemViewModel"
             type="com.xushuzhan.theonedemo.data.bean.OneListItemViewModule"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ef7878"
+        android:background="@color/item_one_activity"
+        android:layout_marginBottom="10dp"
+
         >
 
         <ImageView
             android:id="@+id/iv_item_one_top_pic"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/ic_launcher_background"
+            app:image_url="@{itemViewModel.imageUrl.get()}"
             app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+           />
 
 
         <android.support.constraint.Guideline
@@ -50,23 +52,25 @@
                 android:id="@+id/tv_item_one_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{itemViewModule.title.get()}"
-                android:textSize="14sp" />
+                android:text="@{itemViewModel.title.get()+` | `}"
+                android:textColor="@color/sub_title_one_activity"
+                android:textSize="@dimen/sub_title_one_list" />
 
-            <View
-                android:id="@+id/vi_item_one_divider"
-                android:layout_width="0.1dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:background="#000" />
+            <!--<View-->
+                <!--android:id="@+id/vi_item_one_divider"-->
+                <!--android:layout_width="0.1dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginLeft="3dp"-->
+                <!--android:layout_marginRight="3dp"-->
+                <!--android:background="@color/sub_title_one_activity" />-->
 
             <TextView
                 android:id="@+id/iv_item_one_picinfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{itemViewModule.picInfo.get()}"
-                android:textSize="14sp" />
+                android:text="@{itemViewModel.picInfo.get()}"
+                android:textColor="@color/sub_title_one_activity"
+                android:textSize="@dimen/sub_title_one_list" />
         </LinearLayout>
 
         <TextView
@@ -76,8 +80,9 @@
             android:layout_marginEnd="32dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:text="@{itemViewModule.content.get()}"
+            android:textSize="@dimen/content_title_one_list"
+            android:textColor="@color/content_one_activity"
+            android:text="@{itemViewModel.content.get()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -90,8 +95,9 @@
             android:layout_height="17dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="24dp"
-            android:textSize="13sp"
-            android:text="@{itemViewModule.wordsInfo.get()}"
+            android:textSize="@dimen/sub_title_one_list"
+            android:text="@{itemViewModel.wordsInfo.get()}"
+            android:textColor="@color/sub_title_one_activity"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintLeft_toLeftOf="parent"

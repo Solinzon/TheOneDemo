@@ -5,12 +5,14 @@
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_one_common_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/background_one_activity"
             />
     </android.support.constraint.ConstraintLayout>
 </layout>

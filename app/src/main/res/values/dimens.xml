@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--OneActivity-->
+    <dimen name="title_one_list">18sp</dimen>
+    <dimen name="sub_title_one_list">13sp</dimen>
+    <dimen name="content_title_one_list">14sp</dimen>
+
+
+</resources>

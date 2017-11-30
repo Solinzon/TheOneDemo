@@ -40,7 +40,6 @@ public class OneFragment extends Fragment{
             list.add(OneCommomFragment.newInstance(i));
         }
         mFragmentOneBinding.vpFragmentOneFragment.setAdapter(new OneFragmentPagesAdapter(getActivity().getSupportFragmentManager(),list));
-
     }
 
 }

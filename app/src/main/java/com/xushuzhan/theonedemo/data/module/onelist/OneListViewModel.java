@@ -1,5 +1,7 @@
 package com.xushuzhan.theonedemo.data.module.onelist;
 
+import android.util.Log;
+
 import com.xushuzhan.theonedemo.data.bean.OneListBean;
 import com.xushuzhan.theonedemo.data.local.onelist.OneListLocalData;
 import com.xushuzhan.theonedemo.data.remote.onelist.OneListRemoteData;
@@ -8,17 +10,19 @@ import java.util.List;
 
 /**
  * Created by xushuzhan on 2017/11/30.
+ * OneListViewModel 通过DataCallBack回调与OneListModel进行数据交互
+ * OneListViewModel 通过DataLoadCallBack回调与Fragment进行数据交互
  */
 
 public class OneListViewModel implements DataCallBack{
-    DataLoadCallBack mDataLoadCallBack ;
-
-    OneListBaseData oneListBaseData = new OneListMultiData(new OneListRemoteData(),new OneListLocalData());
+    private static final String TAG = "OneListViewModel";
+    private DataLoadCallBack mDataLoadCallBack ;
+    private OneListModel mOneListModel;
 
     public OneListViewModel(int pagePisitionn,DataLoadCallBack dataLoadCallBack) {
         mDataLoadCallBack = dataLoadCallBack;
-        OneListModel oneListModel = new OneListModel(oneListBaseData);
-        oneListModel.getData(pagePisitionn,this);
+        mOneListModel = new OneListModel(OneListMultiData.getInstance());
+        mOneListModel.getData(pagePisitionn,this);
     }
 
     @Override
