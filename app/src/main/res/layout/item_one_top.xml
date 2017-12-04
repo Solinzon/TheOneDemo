@@ -6,7 +6,7 @@
     <data>
         <variable
             name="itemViewModel"
-            type="com.xushuzhan.theonedemo.data.bean.OneListItemViewModule"/>
+            type="com.xushuzhan.theonedemo.viewmodel.onelist.OneListItemViewModule"/>
     </data>
 
     <android.support.constraint.ConstraintLayout

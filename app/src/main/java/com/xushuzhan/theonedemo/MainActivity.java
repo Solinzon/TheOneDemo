@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.xushuzhan.theonedemo.common.BaseActivity;
-import com.xushuzhan.theonedemo.one.OneActivity;
+import com.xushuzhan.theonedemo.view.onelist.OneActivity;
 
 
 public class MainActivity extends BaseActivity {

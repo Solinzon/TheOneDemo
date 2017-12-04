@@ -9,7 +9,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.xushuzhan.theonedemo.one.OneActivity">
+        tools:context=".view.onelist.OneActivity">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar_activity_one"

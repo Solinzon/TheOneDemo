@@ -5,7 +5,7 @@
     <data>
         <variable
             name="itemViewModel"
-            type="com.xushuzhan.theonedemo.data.bean.OneListItemViewModule"/>
+            type="com.xushuzhan.theonedemo.viewmodel.onelist.OneListItemViewModule"/>
     </data>
 <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
@@ -31,12 +31,10 @@
         android:id="@+id/iv_pic_item_one_normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         app:image_url="@{itemViewModel.imageUrl.get()}"
-        app:layout_constraintBottom_toTopOf="@+id/iv_content_item_one_normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -88,10 +86,10 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:text="@{itemViewModel.content.get()}"
-        android:textSize="@dimen/content_title_one_list"
         android:textColor="@color/content_one_activity"
+        android:textSize="@dimen/content_title_one_list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
