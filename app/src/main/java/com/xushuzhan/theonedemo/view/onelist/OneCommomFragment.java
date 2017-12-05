@@ -68,6 +68,5 @@ public class OneCommomFragment extends Fragment implements DataLoadCallBack{
             }
         });
         mFragmentCommonOneBinding.rvOneCommonFragment.setAdapter(oneListAdapter);
-        Log.d(TAG, "onComplete: "+oneListBean.getContent_list().get(0).toString());
     }
 }

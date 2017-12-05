@@ -7,15 +7,7 @@ import android.util.Log;
 
 import com.xushuzhan.theonedemo.common.BaseActivity;
 import com.xushuzhan.theonedemo.R;
-
-import com.xushuzhan.theonedemo.model.data.bean.JsonWrapper;
-import com.xushuzhan.theonedemo.model.data.bean.ReadingBean;
-import com.xushuzhan.theonedemo.model.data.remote.onelistdetail.OneListDetailRemoteData;
 import com.xushuzhan.theonedemo.model.onelistdetail.ContentCallBack;
-import com.xushuzhan.theonedemo.model.onelistdetail.OneListDetailModel;
-import com.xushuzhan.theonedemo.model.onelistdetail.OneListDetailMutiData;
-import com.xushuzhan.theonedemo.network.RetrofitManager;
-import com.xushuzhan.theonedemo.network.service.OneListDetailService;
 import com.xushuzhan.theonedemo.utils.ActivityUtils;
 
 

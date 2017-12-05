@@ -18,7 +18,7 @@ import com.xushuzhan.theonedemo.viewmodel.onelistdetail.NormalFragmentViewModel;
  * Created by xushuzhan on 2017/12/4.
  */
 
-public class OneListNormaFragment extends Fragment {
+public class OneDetailNormaFragment extends Fragment {
     FragmentOneNormalDetailBinding mOneNormalDetailBinding;
 
     @Nullable
@@ -31,7 +31,8 @@ public class OneListNormaFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        int itemId = getArguments().getInt(OneCommomFragment.ITEM_ID);
-        NormalFragmentViewModel normalFragmentViewModel = new NormalFragmentViewModel(String.valueOf(itemId));
+        String itemId = getArguments().getString(OneCommomFragment.ITEM_ID);
+        NormalFragmentViewModel normalFragmentViewModel = new NormalFragmentViewModel(itemId);
+        mOneNormalDetailBinding.setViewModel(normalFragmentViewModel);
     }
 }

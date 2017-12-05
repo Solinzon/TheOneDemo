@@ -8,8 +8,8 @@ import com.xushuzhan.theonedemo.model.data.bean.ReadingBean;
 
 public class OneStoryConverter {
     public static String convert(ReadingBean content){
-
-
-        return content.getHp_content();
+        String title = "<p style=\"font-size: 28px;font-weight: bold;\">" + content.getHp_title()+"</p>";
+        String author = "<p style=\"font-size: 13px;\">文／"+content.getHp_author()+"</p>";
+        return title+author+content.getHp_content();
     }
 }

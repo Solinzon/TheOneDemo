@@ -2,6 +2,7 @@ package com.xushuzhan.theonedemo.viewmodel.onelistdetail;
 
 import android.databinding.BindingAdapter;
 import android.databinding.ObservableField;
+import android.util.Log;
 import android.webkit.WebView;
 
 import com.xushuzhan.theonedemo.model.onelistdetail.ContentCallBack;
@@ -13,6 +14,7 @@ import com.xushuzhan.theonedemo.model.onelistdetail.OneListDetailMutiData;
  */
 
 public class NormalFragmentViewModel implements ContentCallBack{
+    private static final String TAG = "NormalFragmentViewModel";
     public final ObservableField<String> content = new ObservableField<>();
     OneListDetailModel oneListDetailModel = new OneListDetailModel(new OneListDetailMutiData());
     public NormalFragmentViewModel(String itemId){
@@ -22,10 +24,12 @@ public class NormalFragmentViewModel implements ContentCallBack{
     @Override
     public void onLoadContent(String content) {
         this.content.set(content);
+
     }
 
     @BindingAdapter("web_content")
     public static void loadWebView(WebView webView,String content){
         webView.loadData(content,"text/html;charset=UTF-8",null);
+
     }
 }
