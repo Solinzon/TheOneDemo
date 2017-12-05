@@ -19,9 +19,12 @@ public class OneListViewModel implements DataCallBack {
     private DataLoadCallBack mDataLoadCallBack ;
     private OneListModel mOneListModel;
 
-    public OneListViewModel(int pagePisitionn,DataLoadCallBack dataLoadCallBack) {
-        mDataLoadCallBack = dataLoadCallBack;
+    public OneListViewModel() {
         mOneListModel = new OneListModel(OneListMultiData.getInstance());
+    }
+
+    public void getData(int pagePisitionn,DataLoadCallBack dataLoadCallBack){
+        mDataLoadCallBack = dataLoadCallBack;
         mOneListModel.getData(pagePisitionn,this);
     }
 

@@ -9,8 +9,10 @@ import io.reactivex.Observable;
  */
 
 public class OneListDetailLocalData<T> implements OneListDetailBaseData {
+
+
     @Override
-    public Observable<T> getContent(String itemId) {
+    public <T> Observable<T> getContent(String itemId, String category) {
         return null;
     }
 }

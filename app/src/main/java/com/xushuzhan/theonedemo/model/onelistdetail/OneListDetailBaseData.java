@@ -7,5 +7,5 @@ import io.reactivex.Observable;
  */
 
 public interface OneListDetailBaseData{
-    <T> Observable<T> getContent(String itemId);
+    <T> Observable<T> getContent(String itemId,String category);
 }

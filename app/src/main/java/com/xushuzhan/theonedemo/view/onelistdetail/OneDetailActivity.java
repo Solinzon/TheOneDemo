@@ -16,16 +16,18 @@ public class OneDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_detail);
         Intent intent = getIntent();
+
         String category = intent.getStringExtra(OneCommomFragment.ITEM_CATEGORY);
         String itemId = intent.getStringExtra(OneCommomFragment.ITEM_ID);
 
-        if (category.equals("1")) {
+        if (!(category.equals("3")||category.equals("4")||category.equals("5")) ) {
             OneDetailNormaFragment oneDetailNormaFragment = new OneDetailNormaFragment();
             Bundle bundle = new Bundle();
             bundle.putString(OneCommomFragment.ITEM_ID,itemId);
+            bundle.putString(OneCommomFragment.ITEM_CATEGORY,category);
             oneDetailNormaFragment.setArguments(bundle);
             ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), oneDetailNormaFragment, R.id.frame_one_detail_activity);
-        }else {
+        } else {
             Toast.makeText(this, "暂时不支持该数据类型", Toast.LENGTH_SHORT).show();
         }
     }

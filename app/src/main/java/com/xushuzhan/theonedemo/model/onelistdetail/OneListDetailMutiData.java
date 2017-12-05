@@ -20,17 +20,17 @@ public class OneListDetailMutiData implements OneListDetailBaseData {
 
 
     @Override
-    public <T> Observable<T> getContent(String itemId) {
+    public <T> Observable<T> getContent(String itemId,String category) {
         String s = "来自内存";
         Observable<T> observable = (Observable<T>) contentCache.get(itemId);
         if (observable == null) {
-            observable = oneListDetailLocalData.getContent(itemId);
+            observable = oneListDetailLocalData.getContent(itemId,category);
             contentCache.put(itemId, observable);
             s = "来自本地";
 
         }
         if (observable == null) {
-            observable = oneListDetailRemoteData.getContent(itemId);
+            observable = oneListDetailRemoteData.getContent(itemId,category);
             contentCache.put(itemId, observable);
             s = "来自网络";
         }

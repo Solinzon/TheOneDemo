@@ -28,11 +28,15 @@ public class OneDetailNormaFragment extends Fragment {
         return mOneNormalDetailBinding.getRoot();
     }
 
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //itemId用于请求具体的内容
         String itemId = getArguments().getString(OneCommomFragment.ITEM_ID);
-        NormalFragmentViewModel normalFragmentViewModel = new NormalFragmentViewModel(itemId);
+        //category用于判断具体的显示类型
+        String category = getArguments().getString(OneCommomFragment.ITEM_CATEGORY);
+        NormalFragmentViewModel normalFragmentViewModel = new NormalFragmentViewModel(itemId,category);
         mOneNormalDetailBinding.setViewModel(normalFragmentViewModel);
     }
 }

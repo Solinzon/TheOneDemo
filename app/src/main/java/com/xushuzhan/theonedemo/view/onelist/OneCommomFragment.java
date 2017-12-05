@@ -42,7 +42,8 @@ public class OneCommomFragment extends Fragment implements DataLoadCallBack{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         int listId = getArguments().getInt(LIST_ID);
-        OneListViewModel oneListViewModel = new OneListViewModel(listId,this);
+        OneListViewModel oneListViewModel = new OneListViewModel();
+        oneListViewModel.getData(listId,this);
 
     }
 
