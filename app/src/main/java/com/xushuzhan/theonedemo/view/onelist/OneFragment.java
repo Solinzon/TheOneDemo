@@ -35,7 +35,7 @@ public class OneFragment extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         List<Fragment> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            list.add(OneCommomFragment.newInstance(i));
+            list.add(OneCommonFragment.newInstance(i));
         }
         mFragmentOneBinding.vpFragmentOneFragment.setAdapter(new OneFragmentPagesAdapter(getActivity().getSupportFragmentManager(),list));
     }

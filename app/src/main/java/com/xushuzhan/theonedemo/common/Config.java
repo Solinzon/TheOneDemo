@@ -29,4 +29,7 @@ public class Config {
 
     //影视
     public static final String ONE_DETAIL_CATEGORY_ASK_MOVIE = "5";
+
+    //广告
+    public static final String ONE_DETAIL_CATEGORY_ADVERTISEMENT = "6";
 }

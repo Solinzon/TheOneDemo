@@ -12,9 +12,7 @@ import io.reactivex.Observable;
  * Created by xushuzhan on 2017/11/27.
  */
 
-public interface OneListBaseDatail {
+public interface OneListBaseData {
     Observable<JsonWrapper<OneListBean>> getItemBeanObservable(String id);
     Observable<JsonWrapper<List<String>>> getIdListBeanObservable();
-
-
 }

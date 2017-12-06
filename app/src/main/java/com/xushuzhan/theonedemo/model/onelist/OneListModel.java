@@ -11,9 +11,9 @@ import io.reactivex.schedulers.Schedulers;
 
 public class OneListModel {
     private static final String TAG = "OneListModel";
-    OneListBaseDatail mOneListBaseData;
+    OneListBaseData mOneListBaseData;
 
-    public OneListModel(OneListBaseDatail oneListBaseData) {
+    public OneListModel(OneListBaseData oneListBaseData) {
             mOneListBaseData = oneListBaseData;
     }
 

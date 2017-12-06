@@ -5,6 +5,7 @@ import android.databinding.ObservableField;
 import android.util.Log;
 import android.webkit.WebView;
 
+import com.xushuzhan.theonedemo.common.Config;
 import com.xushuzhan.theonedemo.model.onelistdetail.ContentCallBack;
 import com.xushuzhan.theonedemo.model.onelistdetail.OneListDetailModel;
 import com.xushuzhan.theonedemo.model.onelistdetail.OneListDetailMutiData;
@@ -19,10 +20,12 @@ public class NormalFragmentViewModel implements ContentCallBack {
     OneListDetailModel oneListDetailModel = new OneListDetailModel(new OneListDetailMutiData());
 
     public NormalFragmentViewModel(String itemId,String category) {
-        if (category.equals("1")) {
+        if (category.equals(Config.ONE_DETAIL_CATEGORY_ESSAY)) {
             oneListDetailModel.getReadContent(itemId, this);
-        }else {
+        }else if(category.equals(Config.ONE_DETAIL_CATEGORY_SERIALIZE)){
             oneListDetailModel.getSerializedContent(itemId, this);
+        }else if (category.equals(Config.ONE_DETAIL_CATEGORY_ASK_ANSWER)){
+            oneListDetailModel.getQuestionContent(itemId,this);
         }
     }
 

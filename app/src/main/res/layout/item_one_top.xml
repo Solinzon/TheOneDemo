@@ -56,14 +56,6 @@
                 android:textColor="@color/sub_title_one_activity"
                 android:textSize="@dimen/sub_title_one_list" />
 
-            <!--<View-->
-                <!--android:id="@+id/vi_item_one_divider"-->
-                <!--android:layout_width="0.1dp"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:layout_marginLeft="3dp"-->
-                <!--android:layout_marginRight="3dp"-->
-                <!--android:background="@color/sub_title_one_activity" />-->
-
             <TextView
                 android:id="@+id/iv_item_one_picinfo"
                 android:layout_width="wrap_content"

@@ -23,7 +23,6 @@ import java.util.List;
 public class OneListAdapter extends RecyclerView.Adapter<CommonViewHolder>{
 
     List<OneListBean.ContentListBean> mContents;
-
     OnItemClickListener mListener;
     public OneListAdapter(List<OneListBean.ContentListBean> contentListBean) {
         mContents = contentListBean;
@@ -35,10 +34,10 @@ public class OneListAdapter extends RecyclerView.Adapter<CommonViewHolder>{
     public CommonViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == R.layout.item_one_top) {
             ItemOneTopBinding itemOneTopBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), viewType, parent, false);
-            return new CommonViewHolder<ItemOneTopBinding>(itemOneTopBinding);
+            return new CommonViewHolder<>(itemOneTopBinding);
         } else {
             ItemOneNormalBinding itemOneNormalBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), viewType, parent, false);
-            return new CommonViewHolder<ItemOneNormalBinding>(itemOneNormalBinding);
+            return new CommonViewHolder<>(itemOneNormalBinding);
         }
 
     }
@@ -51,11 +50,8 @@ public class OneListAdapter extends RecyclerView.Adapter<CommonViewHolder>{
         OneListItemViewModule oneListItemViewModule = new OneListItemViewModule(contentListBean);
         holder.binding.setVariable(BR.itemViewModel, oneListItemViewModule);
 //        oneListItemViewModule.update(contentListBean);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mListener!=null) mListener.onItemClick(contentListBean);
-            }
+        holder.itemView.setOnClickListener(view -> {
+            if (mListener!=null) mListener.onItemClick(contentListBean);
         });
     }
 

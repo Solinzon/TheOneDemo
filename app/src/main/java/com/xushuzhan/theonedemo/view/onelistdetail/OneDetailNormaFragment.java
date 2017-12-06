@@ -1,6 +1,5 @@
 package com.xushuzhan.theonedemo.view.onelistdetail;
 
-import android.annotation.SuppressLint;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.xushuzhan.theonedemo.R;
 import com.xushuzhan.theonedemo.databinding.FragmentOneNormalDetailBinding;
-import com.xushuzhan.theonedemo.view.onelist.OneCommomFragment;
+import com.xushuzhan.theonedemo.view.onelist.OneCommonFragment;
 import com.xushuzhan.theonedemo.viewmodel.onelistdetail.NormalFragmentViewModel;
 
 /**
@@ -33,9 +32,9 @@ public class OneDetailNormaFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //itemId用于请求具体的内容
-        String itemId = getArguments().getString(OneCommomFragment.ITEM_ID);
+        String itemId = getArguments().getString(OneCommonFragment.ITEM_ID);
         //category用于判断具体的显示类型
-        String category = getArguments().getString(OneCommomFragment.ITEM_CATEGORY);
+        String category = getArguments().getString(OneCommonFragment.ITEM_CATEGORY);
         NormalFragmentViewModel normalFragmentViewModel = new NormalFragmentViewModel(itemId,category);
         mOneNormalDetailBinding.setViewModel(normalFragmentViewModel);
     }

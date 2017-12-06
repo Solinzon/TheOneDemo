@@ -1,103 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+        <import type="android.view.View"/>
         <variable
             name="itemViewModel"
-            type="com.xushuzhan.theonedemo.viewmodel.onelist.OneListItemViewModule"/>
+            type="com.xushuzhan.theonedemo.viewmodel.onelist.OneListItemViewModule" />
     </data>
-<android.support.constraint.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/item_one_activity"
-    android:layout_marginBottom="10dp"
-    >
 
-    <TextView
-        android:id="@+id/iv_category_item_one_normal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@{`- `+itemViewModel.categry.get()+'-'}"
-        android:textSize="@dimen/sub_title_one_list"
-        android:textColor="@color/sub_title_one_activity"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <ImageView
-        android:id="@+id/iv_pic_item_one_normal"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="9dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        app:image_url="@{itemViewModel.imageUrl.get()}"
-        app:layout_constraintBottom_toTopOf="@+id/iv_content_item_one_normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_user_item_one_normal" />
+        android:layout_marginBottom="10dp"
+        android:background="@color/item_one_activity">
+
+        <TextView
+            android:id="@+id/iv_category_item_one_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{`- `+itemViewModel.categry.get()+'-'}"
+            android:textColor="@color/sub_title_one_activity"
+            android:textSize="@dimen/sub_title_one_list"
+            android:visibility="@{itemViewModel.categry.get()==null? View.GONE : View.VISIBLE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-
-    <!--android:text="标题，后山的怪物"-->
-    <TextView
-        android:id="@+id/iv_title_item_one_normal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:text="@{itemViewModel.title.get()}"
-        android:textColor="@color/title_one_activity"
-        android:textSize="@dimen/title_one_list"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_category_item_one_normal" />
-
-    <!--android:text="@{`文/`+itemViewModel.author.get()}"-->
-
-    <TextView
-        android:id="@+id/iv_user_item_one_normal"
-        android:layout_width="0dp"
-        android:layout_height="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="文／大给"
-        android:textColor="@color/sub_title_one_activity"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_title_item_one_normal" />
+        <ImageView
+            android:id="@+id/iv_pic_item_one_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:image_url="@{itemViewModel.imageUrl.get()}"
+            app:layout_constraintBottom_toTopOf="@+id/iv_content_item_one_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_user_item_one_normal" />
 
 
-    <TextView
-        android:id="@+id/iv_content_item_one_normal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:text="@{itemViewModel.content.get()}"
-        android:textColor="@color/content_one_activity"
-        android:textSize="@dimen/content_title_one_list"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_pic_item_one_normal"
-        app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/iv_title_item_one_normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:text="@{itemViewModel.title.get()}"
+            android:textColor="@color/title_one_activity"
+            android:textSize="@dimen/title_one_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_category_item_one_normal" />
 
-</android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/iv_user_item_one_normal"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@{`文`+`/`+itemViewModel.author.get()}"
+            android:visibility="@{itemViewModel.author.get()==null? View.GONE : View.VISIBLE}"
+            android:textColor="@color/sub_title_one_activity"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_title_item_one_normal" />
+
+
+        <TextView
+            android:id="@+id/iv_content_item_one_normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:text="@{itemViewModel.content.get()}"
+            android:textColor="@color/content_one_activity"
+            android:textSize="@dimen/content_title_one_list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_pic_item_one_normal"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </android.support.constraint.ConstraintLayout>
 </layout>

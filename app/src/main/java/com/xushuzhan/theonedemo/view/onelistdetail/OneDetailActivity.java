@@ -6,10 +6,11 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.xushuzhan.theonedemo.R;
+import com.xushuzhan.theonedemo.common.BaseActivity;
 import com.xushuzhan.theonedemo.utils.ActivityUtils;
-import com.xushuzhan.theonedemo.view.onelist.OneCommomFragment;
+import com.xushuzhan.theonedemo.view.onelist.OneCommonFragment;
 
-public class OneDetailActivity extends AppCompatActivity {
+public class OneDetailActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,14 +18,14 @@ public class OneDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_one_detail);
         Intent intent = getIntent();
 
-        String category = intent.getStringExtra(OneCommomFragment.ITEM_CATEGORY);
-        String itemId = intent.getStringExtra(OneCommomFragment.ITEM_ID);
+        String category = intent.getStringExtra(OneCommonFragment.ITEM_CATEGORY);
+        String itemId = intent.getStringExtra(OneCommonFragment.ITEM_ID);
 
-        if (!(category.equals("3")||category.equals("4")||category.equals("5")) ) {
+        if (!(category.equals("4")||category.equals("5")) ) {
             OneDetailNormaFragment oneDetailNormaFragment = new OneDetailNormaFragment();
             Bundle bundle = new Bundle();
-            bundle.putString(OneCommomFragment.ITEM_ID,itemId);
-            bundle.putString(OneCommomFragment.ITEM_CATEGORY,category);
+            bundle.putString(OneCommonFragment.ITEM_ID,itemId);
+            bundle.putString(OneCommonFragment.ITEM_CATEGORY,category);
             oneDetailNormaFragment.setArguments(bundle);
             ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), oneDetailNormaFragment, R.id.frame_one_detail_activity);
         } else {
