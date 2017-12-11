@@ -4,7 +4,12 @@
     xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.xushuzhan.theonedemo.viewmodel.onelist.OneListViewModel"/>
 
+    </data>
     <android.support.constraint.ConstraintLayout
 
         android:layout_width="match_parent"
@@ -31,7 +36,7 @@
                     android:id="@+id/tv_date_activity_one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2017 / 11 / 27"
+                    android:text="「ONE·一个」"
                     android:textSize="18sp" />
             </LinearLayout>
         </android.support.v7.widget.Toolbar>

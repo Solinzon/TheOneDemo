@@ -10,14 +10,23 @@ import com.xushuzhan.theonedemo.model.data.bean.ReadingBean;
 public class MusicConverter {
     public static String convert(MusicBean content){
 
-        String pic = "<div style=\"style=\"position: relative; width: 200px; height: 200px;\"\">\n" +
-                "<img src=\""+content.getCover()+"\" style=\"width: 130px;position: absolute; top: 50%; left: 50%; margin-left: -50px; margin-top: -50px;z-index: 1;\" >\n" +
-                " <img src=\""+content.getCover()+"\" style=\"width: 130px;width: -webkit-fill-available;\n" +
-                "    height: -webkit-fill-available;-webkit-filter: blur(15px);\n" +
-                "     -moz-filter: blur(15px);\n" +
-                "     -o-filter: blur(15px);\n" +
-                "     -ms-filter: blur(15px);\n" +
-                "     filter: blur(15px); \">\n" +
+        String pic = "<div style=\"position: relative; \">\n" +
+                "\n" +
+                "<img src=\""+content.getCover()+"\" style=\"width: 130px;position: absolute;\n" +
+                "    top: 50%;\n" +
+                "    left: 50%;\n" +
+                "    margin-left: -65px;\n" +
+                "    margin-top: -65px;\n" +
+                "    z-index: 1;\" >\n" +
+                "\n" +
+                " <img src=\""+content.getCover()+"\" style=\" \n" +
+                "    height: 230px;\n" +
+                "    display: block;\n" +
+                "    width: -webkit-fill-available;\n" +
+                "     -webkit-filter: blur(10px);\n" +
+                "       -moz-filter: blur(10px);\n" +
+                "        -ms-filter: blur(10px);    \n" +
+                "            filter: blur(10px);  \">\n" +
                 " </div>";
         String title = "<p style=\"font-size: 28px;font-weight: bold;\">" + content.getStory_title()+"</p>";
         String author = "<p style=\"font-size: 13px;\">文／"+content.getStory_author().getUser_name()+"</p>";

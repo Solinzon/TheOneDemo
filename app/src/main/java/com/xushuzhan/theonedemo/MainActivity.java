@@ -17,6 +17,8 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_activity_main);
         setSupportActionBar(toolbar);
         startActivity(new Intent(this, OneActivity.class));
+//        startActivity(new Intent(this, TestActivity.class));
+
     }
 
 }

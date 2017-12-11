@@ -23,12 +23,12 @@ public class Config {
     //问答
     public static final String ONE_DETAIL_CATEGORY_ASK_ANSWER = "3";
     //音乐
-    public static final String ONE_DETAIL_CATEGORY_ASK_MUSIC = "4";
+    public static final String ONE_DETAIL_CATEGORY__MUSIC = "4";
     //周末读诗
     public static final String ONE_DETAIL_CATEGORY_WEEKEND_READ = "4";
 
     //影视
-    public static final String ONE_DETAIL_CATEGORY_ASK_MOVIE = "5";
+    public static final String ONE_DETAIL_CATEGORY_MOVIE = "5";
 
     //广告
     public static final String ONE_DETAIL_CATEGORY_ADVERTISEMENT = "6";

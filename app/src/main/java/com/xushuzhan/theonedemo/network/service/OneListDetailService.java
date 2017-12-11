@@ -1,6 +1,8 @@
 package com.xushuzhan.theonedemo.network.service;
 
 import com.xushuzhan.theonedemo.model.data.bean.JsonWrapper;
+import com.xushuzhan.theonedemo.model.data.bean.MovieDetailBean;
+import com.xushuzhan.theonedemo.model.data.bean.MovieInfoBean;
 import com.xushuzhan.theonedemo.model.data.bean.MusicBean;
 import com.xushuzhan.theonedemo.model.data.bean.QuestionBean;
 import com.xushuzhan.theonedemo.model.data.bean.ReadingBean;
@@ -27,7 +29,11 @@ public interface OneListDetailService {
     //音乐 category = 4
     @GET ("music/detail/{item_id}?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android")
     Observable<JsonWrapper<MusicBean>> getMusicContent(@Path("item_id") String itemId);
-    @GET ("movie/detail/{item_id}?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android")
-    Observable<JsonWrapper<MusicBean>> getMovieContent(@Path("item_id") String itemId);
 
+    //影视信息 category = 5
+    @GET ("movie/detail/{item_id}?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android")
+    Observable<JsonWrapper<MovieInfoBean>> getMovieInfo(@Path("item_id") String itemId);
+
+    @GET ("movie/{item_id}/story/1/0?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android")
+    Observable<JsonWrapper<MovieDetailBean>> getMovieContent(@Path("item_id") String itemId);
 }

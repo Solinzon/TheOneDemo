@@ -1,5 +1,6 @@
 package com.xushuzhan.theonedemo.model.onelist;
 
+import android.app.Instrumentation;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
@@ -21,6 +22,7 @@ public class OneListMultiData implements OneListBaseData {
     private static final String TAG = "OneListMultiData";
     OneListRemoteData oneListRemoteData;
     OneListLocalData oneListLocalData;
+
     HashMap<String, Observable<JsonWrapper<OneListBean>>> mItemBeanCache = new HashMap<>();
     Observable<JsonWrapper<List<String>>> mIdListBeanCache;
     public static class Holder{
